@@ -1,0 +1,81 @@
+<div>
+  <div>
+    <br>
+    <input type="file" (change)="fileChange($event)" placeholder="Upload file" accept=".txt"> <br>
+    <label>
+      <input type="checkbox" name="checkbox" [(ngModel)]="report.frequencyMonobitCheck">Frequency Monobit
+      <input type="number" name="quantity" [(ngModel)]="report.frequencyMonobit" value="1000000">
+    </label><br>
+    <label>
+      <input type="checkbox" name="checkbox" [(ngModel)]="report.frequencyTestWithinBlockCheck">Frequency Test Within a Block
+      <input type="number" name="quantity" [(ngModel)]="report.frequencyTestWithinBlock" value="1000000">
+    </label><br>
+    <label>
+      <input type="checkbox" name="checkbox" [(ngModel)]="report.runsCheck">Runs
+      <input type="number" name="quantity" [(ngModel)]="report.runs" value="1000000">
+    </label><br>
+    <label>
+      <input type="checkbox" name="checkbox" [(ngModel)]="report.longestRunOfOnesInBlockCheck">Longest Run of Ones in a Block
+      <input type="number" name="quantity" [(ngModel)]="report.longestRunOfOnesInBlock" value="1000000">
+    </label><br>
+    <label>
+      <input type="checkbox" name="checkbox" [(ngModel)]="report.binaryMatrixRankCheck">Binary Matrix Rank
+      <input type="number" name="quantity" [(ngModel)]="report.binaryMatrixRank" value="1000000">
+    </label><br>
+    <label>
+      <input type="checkbox" name="checkbox" [(ngModel)]="report.discreteFourierTransformCheck">Discrete Fourier Transform (Spectral)
+      <input type="number" name="quantity" [(ngModel)]="report.discreteFourierTransform" value="1000000">
+    </label><br>
+    <label>
+      <input type="checkbox" name="checkbox" [(ngModel)]="report.nonOverlappingTemplateMatchingCheck">Non Overlapping Template Matching
+      <input type="number" name="quantity" [(ngModel)]="report.nonOverlappingTemplateMatching" value="1000000">
+    </label><br>
+    <label>
+      <input type="checkbox" name="checkbox" [(ngModel)]="report.overlappingTemplateMatchingCheck">Overlapping Template Matching
+      <input type="number" name="quantity" [(ngModel)]="report.overlappingTemplateMatching" value="1000000">
+    </label><br>
+    <label>
+      <input type="checkbox" name="checkbox" [(ngModel)]="report.universalCheck">Universal
+      <input type="number" name="quantity" [(ngModel)]="report.universal" value="1000000">
+    </label><br>
+    <label>
+      <input type="checkbox" name="checkbox" [(ngModel)]="report.linearComplexityCheck">Linear Complexity
+      <input type="number" name="quantity" [(ngModel)]="report.linearComplexity" value="1000000">
+    </label><br>
+    <label>
+      <input type="checkbox" name="checkbox" [(ngModel)]="report.serialCheck">Serial
+      <input type="number" name="quantity" [(ngModel)]="report.serial" value="1000000">
+    </label><br>
+    <label>
+      <input type="checkbox" name="checkbox" [(ngModel)]="report.approximateEntropyCheck">Approximate Entropy
+      <input type="number" name="quantity" [(ngModel)]="report.approximateEntropy" value="1000000">
+    </label><br>
+    <label>
+      <input type="checkbox" name="checkbox" [(ngModel)]="report.cumulativeSumsCheck">Cumulative Sums
+      <input type="number" name="quantity" [(ngModel)]="report.cumulativeSums" value="1000000">
+    </label><br>
+    <label>
+      <input type="checkbox" name="checkbox" [(ngModel)]="report.randomExcursionsCheck">Random Excursions
+      <input type="number" name="quantity" [(ngModel)]="report.randomExcursions" value="1000000">
+    </label><br>
+    <label>
+      <input type="checkbox" name="checkbox" [(ngModel)]="report.randomExcursionsVariantCheck">Random Excursions Variant
+      <input type="number" name="quantity" [(ngModel)]="report.randomExcursionsVariantCheck" value="1000000">
+    </label><br>
+
+    Select a split character:
+    <select>
+      <option value=",">,</option>
+      <option value=".">.</option>
+      <option value=";">;</option>
+      <option value="|">|</option>
+      <option value=" "> </option>
+      <option value="/">/</option>
+      <option value="#">#</option>
+      <option value="\r\n">\r\n</option>
+    </select><br>
+
+    <button (click)="runTests()">Run tests</button> <br>
+
+  </div>
+</div>
