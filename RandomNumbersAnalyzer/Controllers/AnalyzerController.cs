@@ -15,8 +15,8 @@
         public Dictionary<string, Report> Post([FromBody] Front view)
         {
             List<Test> tests = new List<Test>();
-            //Model model = new Model(Util.str2ints(Util.loadData(view.Numbers), view.SplitCharacter));
-            Model model = new Model(new List<int>());
+            Model model = new Model(Util.str2ints(Util.loadData(view.Numbers), view.SplitCharacter));
+            //Model model = new Model(new List<int>());
 
             if (view.FrequencyMonobitCheck)
             {

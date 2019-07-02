@@ -1,82 +1,82 @@
 <div>
   <div>
     <br>
-    <input type="file" (change)="fileChange($event)" placeholder="Upload file" accept=".txt"> <br>
+    <input type="file" #file (change)="uploadFile(file.files)" placeholder="Upload file" accept=".txt"> <br>
     <label>
-      <input type="checkbox" name="checkbox" [(ngModel)]="report.frequencyMonobitCheck">Frequency Monobit
-      <input type="number" name="quantity" [(ngModel)]="report.frequencyMonobit" value="">
+      <input type="checkbox" name="checkbox" [(ngModel)]="test.frequencyMonobitCheck">Frequency Monobit
+      <input type="number" name="quantity" [(ngModel)]="test.frequencyMonobit" value="">
     </label><br>
     <label>
-      <input type="checkbox" name="checkbox" [(ngModel)]="report.frequencyTestWithinBlockCheck">Frequency Test Within a Block
-      <input type="number" name="quantity" [(ngModel)]="report.frequencyTestWithinBlock" value="">
-      <span>M</span> <input type="number" name="quantity" [(ngModel)]="report.frequencyTestWithinBlockM" value="">
+      <input type="checkbox" name="checkbox" [(ngModel)]="test.frequencyTestWithinBlockCheck">Frequency Test Within a Block
+      <input type="number" name="quantity" [(ngModel)]="test.frequencyTestWithinBlock" value="">
+      <span>M</span> <input type="number" name="quantity" [(ngModel)]="test.frequencyTestWithinBlockM" value="">
     </label><br>
     <label>
-      <input type="checkbox" name="checkbox" [(ngModel)]="report.runsCheck">Runs
-      <input type="number" name="quantity" [(ngModel)]="report.runs" value="">
+      <input type="checkbox" name="checkbox" [(ngModel)]="test.runsCheck">Runs
+      <input type="number" name="quantity" [(ngModel)]="test.runs" value="">
     </label><br>
     <label>
-      <input type="checkbox" name="checkbox" [(ngModel)]="report.longestRunOfOnesInBlockCheck">Longest Run of Ones in a Block
-      <input type="number" name="quantity" [(ngModel)]="report.longestRunOfOnesInBlock" value="">
+      <input type="checkbox" name="checkbox" [(ngModel)]="test.longestRunOfOnesInBlockCheck">Longest Run of Ones in a Block
+      <input type="number" name="quantity" [(ngModel)]="test.longestRunOfOnesInBlock" value="">
     </label><br>
     <label>
-      <input type="checkbox" name="checkbox" [(ngModel)]="report.binaryMatrixRankCheck">Binary Matrix Rank
-      <input type="number" name="quantity" [(ngModel)]="report.binaryMatrixRank" value="">
+      <input type="checkbox" name="checkbox" [(ngModel)]="test.binaryMatrixRankCheck">Binary Matrix Rank
+      <input type="number" name="quantity" [(ngModel)]="test.binaryMatrixRank" value="">
     </label><br>
     <label>
-      <input type="checkbox" name="checkbox" [(ngModel)]="report.discreteFourierTransformCheck">Discrete Fourier Transform (Spectral)
-      <input type="number" name="quantity" [(ngModel)]="report.discreteFourierTransform" value="">
+      <input type="checkbox" name="checkbox" [(ngModel)]="test.discreteFourierTransformCheck">Discrete Fourier Transform (Spectral)
+      <input type="number" name="quantity" [(ngModel)]="test.discreteFourierTransform" value="">
     </label><br>
     <label>
-      <input type="checkbox" name="checkbox" [(ngModel)]="report.nonOverlappingTemplateMatchingCheck">Non Overlapping Template Matching
-      <input type="number" name="quantity" [(ngModel)]="report.nonOverlappingTemplateMatching" value="">
-      <span>Single</span> <input type="checkbox" name="checkbox" [(ngModel)]="report.nonOverlappingTemplateMatchingSingle" /> 
-      <span *ngIf="!report.nonOverlappingTemplateMatchingSingle">M <input type="number" name="quantity" [(ngModel)]="report.nonOverlappingTemplateMatchingM" value=""></span> 
-      <span *ngIf="report.nonOverlappingTemplateMatchingSingle">B <input type="number" name="quantity" [(ngModel)]="report.nonOverlappingTemplateMatchingB" value=""></span>
+      <input type="checkbox" name="checkbox" [(ngModel)]="test.nonOverlappingTemplateMatchingCheck">Non Overlapping Template Matching
+      <input type="number" name="quantity" [(ngModel)]="test.nonOverlappingTemplateMatching" value="">
+      <span>Single</span> <input type="checkbox" name="checkbox" [(ngModel)]="test.nonOverlappingTemplateMatchingSingle" /> 
+      <span *ngIf="!test.nonOverlappingTemplateMatchingSingle">M <input type="number" name="quantity" [(ngModel)]="test.nonOverlappingTemplateMatchingM" value=""></span> 
+      <span *ngIf="test.nonOverlappingTemplateMatchingSingle">B <input type="number" name="quantity" [(ngModel)]="test.nonOverlappingTemplateMatchingB" value=""></span>
     </label><br>
     <label>
-      <input type="checkbox" name="checkbox" [(ngModel)]="report.overlappingTemplateMatchingCheck">Overlapping Template Matching
-      <input type="number" name="quantity" [(ngModel)]="report.overlappingTemplateMatching" value="">
-      <span>B</span> <input type="number" name="quantity" [(ngModel)]="report.overlappingTemplateMatchingB" value="">
+      <input type="checkbox" name="checkbox" [(ngModel)]="test.overlappingTemplateMatchingCheck">Overlapping Template Matching
+      <input type="number" name="quantity" [(ngModel)]="test.overlappingTemplateMatching" value="">
+      <span>B</span> <input type="number" name="quantity" [(ngModel)]="test.overlappingTemplateMatchingB" value="">
     </label><br>
     <label>
-      <input type="checkbox" name="checkbox" [(ngModel)]="report.universalCheck">Universal
-      <input type="number" name="quantity" [(ngModel)]="report.universal" value="">
-      <span>Custom</span> <input type="checkbox" name="checkbox" [(ngModel)]="report.universalCustom" /> 
-      <span *ngIf="report.universalCustom">L <input type="number" name="quantity" [(ngModel)]="report.universalL" value=""></span> 
-      <span *ngIf="report.universalCustom">Q <input type="number" name="quantity" [(ngModel)]="report.universalQ" value=""></span>
+      <input type="checkbox" name="checkbox" [(ngModel)]="test.universalCheck">Universal
+      <input type="number" name="quantity" [(ngModel)]="test.universal" value="">
+      <span>Custom</span> <input type="checkbox" name="checkbox" [(ngModel)]="test.universalCustom" /> 
+      <span *ngIf="test.universalCustom">L <input type="number" name="quantity" [(ngModel)]="test.universalL" value=""></span> 
+      <span *ngIf="test.universalCustom">Q <input type="number" name="quantity" [(ngModel)]="test.universalQ" value=""></span>
     </label><br>
     <label>
-      <input type="checkbox" name="checkbox" [(ngModel)]="report.linearComplexityCheck">Linear Complexity
-      <input type="number" name="quantity" [(ngModel)]="report.linearComplexity" value="">
-      <span>M</span> <input type="number" name="quantity" [(ngModel)]="report.linearComplexityM" value="">
+      <input type="checkbox" name="checkbox" [(ngModel)]="test.linearComplexityCheck">Linear Complexity
+      <input type="number" name="quantity" [(ngModel)]="test.linearComplexity" value="">
+      <span>M</span> <input type="number" name="quantity" [(ngModel)]="test.linearComplexityM" value="">
     </label><br>
     <label>
-      <input type="checkbox" name="checkbox" [(ngModel)]="report.serialCheck">Serial
-      <input type="number" name="quantity" [(ngModel)]="report.serial" value="">
-      <span>M</span> <input type="number" name="quantity" [(ngModel)]="report.serialM" value="">
+      <input type="checkbox" name="checkbox" [(ngModel)]="test.serialCheck">Serial
+      <input type="number" name="quantity" [(ngModel)]="test.serial" value="">
+      <span>M</span> <input type="number" name="quantity" [(ngModel)]="test.serialM" value="">
     </label><br>
     <label>
-      <input type="checkbox" name="checkbox" [(ngModel)]="report.approximateEntropyCheck">Approximate Entropy
-      <input type="number" name="quantity" [(ngModel)]="report.approximateEntropy" value="">
-      <span>M</span> <input type="number" name="quantity" [(ngModel)]="report.approximateEntropyM" value="">
+      <input type="checkbox" name="checkbox" [(ngModel)]="test.approximateEntropyCheck">Approximate Entropy
+      <input type="number" name="quantity" [(ngModel)]="test.approximateEntropy" value="">
+      <span>M</span> <input type="number" name="quantity" [(ngModel)]="test.approximateEntropyM" value="">
     </label><br>
     <label>
-      <input type="checkbox" name="checkbox" [(ngModel)]="report.cumulativeSumsCheck">Cumulative Sums
-      <input type="number" name="quantity" [(ngModel)]="report.cumulativeSums" value="">
-      <input type="checkbox" name="quantity" [(ngModel)]="report.cumulativeSumsForward" value="">Forward
+      <input type="checkbox" name="checkbox" [(ngModel)]="test.cumulativeSumsCheck">Cumulative Sums
+      <input type="number" name="quantity" [(ngModel)]="test.cumulativeSums" value="">
+      <input type="checkbox" name="quantity" [(ngModel)]="test.cumulativeSumsForward" value="">Forward
     </label><br>
     <label>
-      <input type="checkbox" name="checkbox" [(ngModel)]="report.randomExcursionsCheck">Random Excursions
-      <input type="number" name="quantity" [(ngModel)]="report.randomExcursions" value="">
+      <input type="checkbox" name="checkbox" [(ngModel)]="test.randomExcursionsCheck">Random Excursions
+      <input type="number" name="quantity" [(ngModel)]="test.randomExcursions" value="">
     </label><br>
     <label>
-      <input type="checkbox" name="checkbox" [(ngModel)]="report.randomExcursionsVariantCheck">Random Excursions Variant
-      <input type="number" name="quantity" [(ngModel)]="report.randomExcursionsVariantCheck" value="">
+      <input type="checkbox" name="checkbox" [(ngModel)]="test.randomExcursionsVariantCheck">Random Excursions Variant
+      <input type="number" name="quantity" [(ngModel)]="test.randomExcursionsVariantCheck" value="">
     </label><br>
 
     Select a split character:
-    <select [(ngModel)]="report.splitCharacter">
+    <select [(ngModel)]="test.splitCharacter">
       <option value=",">,</option>
       <option value=".">.</option>
       <option value=";">;</option>

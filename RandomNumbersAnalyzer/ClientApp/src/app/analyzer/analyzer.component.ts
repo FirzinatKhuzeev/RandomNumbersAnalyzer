@@ -1,5 +1,5 @@
 import { Component, Inject, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpEventType } from '@angular/common/http';
 
 @Component({
   selector: 'app-analyzer',
@@ -7,10 +7,10 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['./analyzer.component.css']
 })
 export class AnalyzerComponent implements OnInit {
-  public report: Report;
+  public test: ITest;
   constructor(private http: HttpClient, @Inject('BASE_URL') private baseUrl: string) {
 
-    this.report = (({
+    this.test = (({
       frequencyMonobit: 1000000,
       frequencyMonobitCheck: true,
       frequencyTestWithinBlock: 1000000,
@@ -54,7 +54,7 @@ export class AnalyzerComponent implements OnInit {
       randomExcursionsVariant: 1000000,
       randomExcursionsVariantCheck: 1000000,
       splitCharacter: "/",
-      numbers: "test"
+      numbers: ""
     }) as any);
   }
 
@@ -62,28 +62,32 @@ export class AnalyzerComponent implements OnInit {
   }
 
   runTests() {
-    this.http.post(this.baseUrl + 'api/analyzer', this.report)
+    this.http.post(this.baseUrl + 'api/analyzer', this.test)
       .subscribe(
-        (data: { [id: string]: Report; }) => {
+        data=> {
           console.log(data);
         },
         error => console.error(error));
   }
 
-  fileChange(event) {
-    let fileList: FileList = event.target.files;
-    if (fileList.length > 0) {
-      let file: File = fileList[0];
-      let formData: FormData = new FormData();
-      formData.append('uploadFile', file, file.name);
-      let headers = new Headers();
-      headers.append('Content-Type', 'multipart/form-data');
-      headers.append('Accept', 'application/json');
+  public uploadFile = (files) => {
+    if (files.length === 0) {
+      return;
     }
+
+    let fileToUpload = <File>files[0];
+    const formData = new FormData();
+    formData.append('file', fileToUpload, fileToUpload.name);
+
+    this.http.post(this.baseUrl + 'api/upload', formData)
+      .subscribe(data => {
+        this.test.numbers = (data as any).path;
+        console.log(data);
+      });
   }
 }
 
-interface Report {
+interface ITest {
   frequencyMonobit: number;
   frequencyMonobitCheck: false;
   frequencyTestWithinBlock: number;
@@ -128,4 +132,9 @@ interface Report {
   randomExcursionsVariantCheck: number;
   splitCharacter: string;
   numbers: string;
+}
+
+interface IReport {
+  title: string;
+  body: string;
 }
